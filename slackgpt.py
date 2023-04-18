@@ -146,7 +146,7 @@ def direct_message_handler(body, say):
     event = body["event"]
     if event.get("subtype") == "bot_message" or event.get("bot_id"):
         return
-    handle_message(event)
+    handle_message(event, thread=True)
 
 if __name__ == "__main__":
     handler = SocketModeHandler(app, SLACK_APP_TOKEN)
