@@ -22,7 +22,7 @@ DEFAULT_PROMPT = (
     "something or something seems inappropriate, you should say that you don't know."
 )
 # The OpenAI model to use. Can be gpt-3.5-turbo or gpt-4.
-MODEL = os.environ.get("MODEL", "gpt-3.5-turbo")
+MODEL = os.environ.get("MODEL", "gpt-4")
 # The max length of a message to OpenAI.
 MAX_TOKENS = 8000 if MODEL == "gpt-4" else 4096
 # The max length of a response from OpenAI.
