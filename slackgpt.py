@@ -96,7 +96,7 @@ def get_message_history(channel_id, user_id, event_ts, limit, thread=False):
     return history
 
 
-def handle_message(event, thread=False):
+def handle_message(event, thread=True):
     """Handle a direct message or mention."""
     channel_id = event["channel"]
     user_id = event["user"]
@@ -146,7 +146,7 @@ def direct_message_handler(body, say):
     event = body["event"]
     if event.get("subtype") == "bot_message" or event.get("bot_id"):
         return
-    handle_message(event, thread=True)
+    handle_message(event)
 
 if __name__ == "__main__":
     handler = SocketModeHandler(app, SLACK_APP_TOKEN)
